@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: codezz-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server/index.js
+    healthCheckPath: /
+    envVars:
+      - key: mongoose_url
+        sync: false
+      - key: jwt_secret_key
+        sync: false
+      - key: judge
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
